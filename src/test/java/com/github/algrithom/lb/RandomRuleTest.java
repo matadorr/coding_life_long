@@ -29,8 +29,9 @@ public class RandomRuleTest {
 
     @Test
     public void testRandomRule() throws Exception {
-        for (int i = 0; i < 100000; i++) {
-
+        for (int i = 0; i < 1000000; i++) {
+            int index = ThreadLocalRandom.current().nextInt(allServerList.size());
+            Server chosenServer = allServerList.get(index);
             listCount.add(chosenServer);
         }
     }
